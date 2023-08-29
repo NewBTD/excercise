@@ -9,6 +9,7 @@ function App() {
     z: 0,
   });
   const handleRequestMotion = async () => {
+    window.navigator.vibrate(200);
     const mobile = getMobileOperatingSystem();
     if (mobile === "iOS") {
       if (typeof (DeviceMotionEvent as any).requestPermission === "function") {
