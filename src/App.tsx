@@ -18,7 +18,7 @@ function App() {
   };
   return (
     <>
-      <button onClick={handleMotion}></button>
+      <button onClick={handleMotion}>Enable motion</button>
       <h1>{motion1.x}</h1>
       <h1>{motion1.y}</h1>
       <h1>{motion1.z}</h1>
