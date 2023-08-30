@@ -32,23 +32,25 @@ const RenderJSX = () => {
 
 function ResultTable() {
   const [data, setData] = useState([]);
+
   const handleTable = () => {
     let dataFromLocal = JSON.parse(localStorage.getItem("exeData") || "");
     setData(dataFromLocal);
   };
   return (
-    <div
-      style={{
-        display: data ? "block" : "none",
-      }}
-    >
+    <>
       <div className="display_btn">
         <Button className="display_table" onClick={handleTable}>
-          แสดงตาราง
+          อัพเดตตาราง
         </Button>
       </div>
       <TableContainer>
-        <Table id="result_table">
+        <Table
+          id="result_table"
+          style={{
+            display: data ? "block" : "none",
+          }}
+        >
           <Thead>
             <Tr>
               <Th>วันที่</Th>
@@ -59,7 +61,7 @@ function ResultTable() {
           <RenderJSX />
         </Table>
       </TableContainer>
-    </div>
+    </>
   );
 }
 
