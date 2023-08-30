@@ -13,6 +13,36 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+#header {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#result {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.result_counter {
+  margin-top: 4rem;
+  font-size: 4rem;
+}
+.result_submit_btn {
+  margin-top: 4rem;
+}
+#result_table {
+  display: none;
+}
+.display_btn {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
 
 a {
   font-weight: 500;
@@ -26,7 +56,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
