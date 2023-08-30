@@ -23,6 +23,7 @@ function App() {
       ];
       localStorage.setItem("exeData", JSON.stringify(data));
       setLocalData(data);
+      console.log(localData);
     } else {
       let data = [
         {
@@ -33,6 +34,7 @@ function App() {
       ];
       localStorage.setItem("exeData", JSON.stringify(data));
       setLocalData(data);
+      console.log(localData);
     }
     setShakeCount(0);
   };
