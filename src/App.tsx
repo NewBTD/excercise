@@ -12,7 +12,7 @@ function App() {
       <Container maxW="550px">
         <ExerciseSelector type={setType} />
         <Shake type={type} />
-        <ResultTable isNewData={true} />
+        <ResultTable />
       </Container>
     </ChakraProvider>
   );

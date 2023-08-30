@@ -110,9 +110,6 @@ function Shake({ type }: any) {
       localStorage.setItem("exeData", JSON.stringify(data));
     }
   };
-  const increaseCount = () => {
-    setCount(count + 1);
-  };
   return (
     <div id="result">
       <Button colorScheme="blue" onClick={handleRequestMotion}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Table,
   Thead,
@@ -30,14 +30,8 @@ const RenderJSX = () => {
   }
 };
 
-function ResultTable(isNewData: any) {
+function ResultTable() {
   const [data, setData] = useState([]);
-  //   const [haveNewData, setHaveNewData] = useState(true);
-  //   useEffect(() => {
-  //     setHaveNewData(isNewData);
-  //   }, []);
-  //   useEffect(() => {});
-
   const handleTable = () => {
     let dataFromLocal = JSON.parse(localStorage.getItem("exeData") || "");
     setData(dataFromLocal);
