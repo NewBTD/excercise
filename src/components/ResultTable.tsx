@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Table,
   Thead,
@@ -8,6 +7,7 @@ import {
   Td,
   TableContainer,
   Button,
+  Flex,
 } from "@chakra-ui/react";
 
 const RenderJSX = () => {
@@ -30,27 +30,22 @@ const RenderJSX = () => {
   }
 };
 
-function ResultTable() {
-  const [data, setData] = useState([]);
-
-  const handleTable = () => {
-    let dataFromLocal = JSON.parse(localStorage.getItem("exeData") || "");
-    setData(dataFromLocal);
+function ResultTable({ setLocalData }: any) {
+  const clearLocal = () => {
+    if (confirm("ลบรายการออกกำลังกาย")) {
+      localStorage.clear();
+      setLocalData([{}]);
+    }
   };
   return (
     <>
-      <div className="display_btn">
-        <Button className="display_table" onClick={handleTable}>
-          อัพเดตตาราง
+      <Flex mt={6} justifyContent="end">
+        <Button colorScheme="red" onClick={clearLocal}>
+          Clear
         </Button>
-      </div>
+      </Flex>
       <TableContainer>
-        <Table
-          id="result_table"
-          style={{
-            display: data ? "block" : "none",
-          }}
-        >
+        <Table>
           <Thead>
             <Tr>
               <Th>วันที่</Th>

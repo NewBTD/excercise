@@ -7,7 +7,7 @@ function normalize(x: number, y: number, z: number) {
   return [x / len, y / len, z / len];
 }
 let shaking: { x: number; y: number; z: number } | undefined;
-function Shake({ type }: any) {
+function Shake({ setShakeCount, shakeCount, handleExeCount }: any) {
   const [motion1, setMotion1] = useState({
     x: 0,
     y: 0,
@@ -19,8 +19,6 @@ function Shake({ type }: any) {
     y: 0,
     z: 0,
   });
-
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const hypot = Math.hypot(motion1.x, motion1.y, motion1.z);
@@ -40,7 +38,7 @@ function Shake({ type }: any) {
           y: motion1.y,
           z: motion1.z,
         };
-        setCount(count + 1);
+        setShakeCount(shakeCount + 1);
       }
     } else if (hypot < 20) {
       shaking = undefined;
@@ -87,35 +85,12 @@ function Shake({ type }: any) {
     }
   };
 
-  const handleExeCount = () => {
-    if (localStorage.getItem("exeData") != null) {
-      let oldData = JSON.parse(localStorage.getItem("exeData") || "");
-      let data = [
-        ...oldData,
-        {
-          date: Date(),
-          type: type,
-          value: count,
-        },
-      ];
-      localStorage.setItem("exeData", JSON.stringify(data));
-    } else {
-      let data = [
-        {
-          date: Date(),
-          type: type,
-          value: count,
-        },
-      ];
-      localStorage.setItem("exeData", JSON.stringify(data));
-    }
-  };
   return (
     <div id="result">
       <Button colorScheme="blue" onClick={handleRequestMotion}>
         กดเพื่อเริ่มออกกำลังกาย
       </Button>
-      <div className="result_counter">{count}</div>
+      <div className="result_counter">{shakeCount}</div>
       <Button
         colorScheme="green"
         className="result_submit_btn"
@@ -123,7 +98,7 @@ function Shake({ type }: any) {
       >
         ออกเสร็จแล้ว 🥹
       </Button>
-      {/* <button className="" onClick={increaseCount}>
+      {/* <button className="" onClick={() => setShakeCount(shakeCount + 1)}>
         ใช้เพิ่ม count
       </button> */}
     </div>

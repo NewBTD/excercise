@@ -35,9 +35,6 @@
 .result_submit_btn {
   margin-top: 4rem;
 }
-#result_table {
-  display: none;
-}
 .display_btn {
   margin-top: 5rem;
   display: flex;

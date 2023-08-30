@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import { Select, Heading } from "@chakra-ui/react";
 
-function ExerciseSelector({ type }: any) {
+function ExerciseSelector({ type, setShakeCount }: any) {
   let exerciseType: string[] = ["ซิทอัพ", "วิดพื้น", "วิ่ง"];
   const handleType = (e: any) => {
     type(e.target.value);
-    console.log(e.target.value);
+    setShakeCount(0);
   };
   useEffect(() => {
     type(exerciseType[0]);
-    console.count("Hello");
   }, []);
   return (
     <div id="header" className="">
