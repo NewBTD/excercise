@@ -21,7 +21,6 @@ function App() {
   });
 
   const [count, setCount] = useState(0);
-  const [time, setTime] = useState(0);
 
   useEffect(() => {
     const hypot = Math.hypot(motion1.x, motion1.y, motion1.z);
