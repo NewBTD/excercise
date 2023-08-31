@@ -98,9 +98,9 @@ function Shake({ setShakeCount, shakeCount, handleExeCount }: any) {
       >
         ออกเสร็จแล้ว 🥹
       </Button>
-      {motion1.x}
-      {motion1.y}
-      {motion1.z}
+      <div>{motion1.x}</div>
+      <div>{motion1.y}</div>
+      <div>{motion1.z}</div>
       {/* <button className="" onClick={() => setShakeCount(shakeCount + 1)}>
         ใช้เพิ่ม count
       </button> */}
