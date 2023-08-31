@@ -2,13 +2,17 @@ import "./App.css";
 import ExerciseSelector from "./components/ExerciseSelector";
 import ResultTable from "./components/ResultTable";
 import Shake from "./components/Shake";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChakraProvider, Container } from "@chakra-ui/react";
 
 function App() {
   const [type, setType] = useState("");
   const [shakeCount, setShakeCount] = useState(0);
   const [localData, setLocalData] = useState([{}]);
+
+  useEffect(() => {
+    document.title = "ออกกำลังกายวันละนิด";
+  }, []);
 
   const handleExeCount = () => {
     if (localStorage.getItem("exeData") != null) {

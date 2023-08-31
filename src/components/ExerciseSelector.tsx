@@ -2,7 +2,13 @@ import { useEffect } from "react";
 import { Select, Heading } from "@chakra-ui/react";
 
 function ExerciseSelector({ type, setShakeCount }: any) {
-  let exerciseType: string[] = ["ซิทอัพ", "วิดพื้น", "วิ่ง"];
+  let exerciseType: string[] = [
+    "เต้น",
+    "คาร์ดิโอ",
+    "วิ่ง",
+    "ซิทอัพ",
+    "วิดพื้น",
+  ];
   const handleType = (e: any) => {
     type(e.target.value);
     setShakeCount(0);
